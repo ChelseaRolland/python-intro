@@ -21,5 +21,19 @@ R   R
 R    R
 """
 
+full_initials = """ 
+ CCC    RRRR
+C   C   R   R
+C       R   R
+C       RRRR
+C       R  R
+C   C   R   R
+ CCC    R    R
+"""
+
 print(first_inital)
 print(second_inital)
+
+print(first_inital, second_inital)
+
+print(full_initials)
