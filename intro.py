@@ -113,3 +113,59 @@ if not gpa >= 2.0:
 
 if not (credits >= 120) and not (gpa >= 2.0):
   print("You do not meet either requirement to graduate!")
+
+#else statement
+credits = 120
+gpa = 1.9
+
+if (credits >= 120) and (gpa >= 2.0):
+  print("You meet the requirements to graduate!")
+else:
+  print("You do not meet the requirements to graduate.")
+
+#else if statements
+grade = 86
+
+if grade >= 90:
+  print("A")
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+elif grade >= 60:
+    print("D")
+else:
+    print("F")
+
+#Conditional Statement Review
+print("I have information for the following planets:\n")
+
+print("   1. Venus   2. Mars    3. Jupiter")
+print("   4. Saturn  5. Uranus  6. Neptune\n")
+
+weight = 185
+planet = 3
+
+# Write an if statement below:
+if planet == 1:
+  print("Your planet is Venus")
+  weight *= 0.91
+elif planet == 2:
+  print("You planet is Mars")
+  weight *= 0.38
+elif planet == 3:
+  print("Your planet is Jupiter")
+  weight *= 2.34
+elif planet == 4:
+  print("Your planet is Saturn")
+  weight *= 1.06
+elif planet == 5:
+  print("Your planet is Uranus")
+  weight *= 0.92
+elif planet == 6:
+  print("Your planet is Neptune")
+  weight *= 1.19
+else:
+    print("This is not the planet you are looking for")
+
+print("Your Weight", weight)
