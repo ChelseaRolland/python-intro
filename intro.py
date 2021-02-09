@@ -45,3 +45,71 @@ greeting = "Hello there fellow dude"
 name = "Chelsea"
 greeting_with_name = greeting + ", " + name
 print(greeting_with_name)
+
+#Boolean Expressions
+print((5 * 2) - 1 == 8 + 1) #True
+print(13 - 6 != (3 * 2) + 1) #False
+print(3 * (2 - 1) == 4 - 1) #True
+
+my_baby_bool = "true"
+print(type(my_baby_bool)) #string
+
+my_baby_bool_two = True
+print(type(my_baby_bool_two)) #boolean
+
+#If statements
+# Enter a user name here, make sure to make it a string
+#user_name = "Davature"
+#user_name = "Dave"
+user_name = "angela_catlady_87"
+
+if user_name == "Dave":
+  print("Get off my computer Dave!")
+
+if user_name == "angela_catlady_87":
+  print("I know it is you, Dave! Go away!")
+
+#Boolean Operator: AND
+statement_one = (2 + 2 + 2 >= 6) and (-1 * -1 < 0) #False
+print(statement_one)
+
+statement_two = (4 * 2 <= 8) and (7 - 1 == 6) #True
+print(statement_two)
+
+credits = 120
+gpa = 3.4
+
+if credits >= 120 and gpa >= 2.0:
+  print("You meet the requirements to graduate!")
+
+#Boolean Operator: OR
+statement_one = (2 - 1 > 3) or (-5 * 2 == -10) #True
+print(statement_one)
+
+statement_two = (9 + 5 <= 15) or (7 != 4 + 3) #True
+print(statement_two)
+
+credits = 118
+gpa = 2.0
+
+if credits >= 120 or gpa >= 2.0:
+  print("You have met at least one of the requirements.")
+
+#Boolean Operator: NOT
+statement_one = not (4 + 5 <= 9)
+print(statement_one)
+
+statement_two = not (8 * 2) != 20 - 4
+print(statement_one)
+
+credits = 120
+gpa = 1.8
+
+if not credits >= 120:
+  print("You do not have enough credits to graduate.")
+
+if not gpa >= 2.0:
+  print("Your GPA is not high enough to graduate.")
+
+if not (credits >= 120) and not (gpa >= 2.0):
+  print("You do not meet either requirement to graduate!")
