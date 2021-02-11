@@ -169,3 +169,21 @@ else:
     print("This is not the planet you are looking for")
 
 print("Your Weight", weight)
+
+#Functions
+def feb_favorite_game():
+  print("So far my favorite game is Little Nightmares 2")
+
+feb_favorite_game()
+
+def new_games(game1, specs = "PS5"):
+  print(game1 + " will come out on the " + specs + ".")
+
+new_games("Spiderman Miles Morales")
+new_games("Little Nightmares 2", "PS4")
+
+def num_squared(x,y):
+  x_squared = x ** 2
+  y_sqared = y ** 2
+  return x_squared, y_sqared
+
