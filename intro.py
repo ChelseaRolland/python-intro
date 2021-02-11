@@ -187,3 +187,19 @@ def num_squared(x,y):
   y_sqared = y ** 2
   return x_squared, y_sqared
 
+def calculate_age(current_year, birth_year):
+  age = current_year - birth_year
+  return age
+  
+#print(current_year) #doesn't work due to scope
+#print(age) #doesn't work due to scope
+
+def repeat_stuff(stuff, num_repeats = 10):
+  return stuff * num_repeats
+
+print(repeat_stuff("Row ", 3))
+print(repeat_stuff("Row ", 3) + "Your Boat. ")
+lyrics = repeat_stuff("Row ", 3) + "Your Boat. "
+print(lyrics)
+song = repeat_stuff(lyrics)
+print(song)
