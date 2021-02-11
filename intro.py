@@ -203,3 +203,60 @@ lyrics = repeat_stuff("Row ", 3) + "Your Boat. "
 print(lyrics)
 song = repeat_stuff(lyrics)
 print(song)
+
+#Lists
+heights = [61, 66, 85, 45, 65]
+little_nightmares_two_char = ["Mono", "Six", 1, 6]
+naruto_shippudden_char_ages = [["Naruto", 16], ["Sasuke", 17], ["Shikamaru", 16]]
+
+#Lists zip method
+names = ['Jenny', 'Alexus', 'Sam', 'Grace']
+dogs_names = ['Elphonse', 'Dr. Doggy DDS', 'Carter', 'Ralph']
+
+names_and_dogs_names = zip(names, dogs_names)
+list_of_names_and_dogs_names = list(names_and_dogs_names)
+print(list_of_names_and_dogs_names)
+
+#Empty lists & Append
+empty_list = []
+empty_list.append(1)
+empty_list.append(2)
+empty_list.append(3)
+empty_list.append("Mono")
+empty_list.append("Six")
+print(empty_list)
+
+#Adding more than 1 item to a list at a time
+orders = ['daisy', 'buttercup', 'snapdragon', 'gardenia', 'lily']
+new_orders = orders + ["lilac", "iris"]
+broken_prices = [5, 3, 4, 5, 4] + [4]
+print(new_orders)
+print(broken_prices)
+
+#Ranges
+list1 = range(9)  #defalut starting is 0, excludes the input
+print(list(list1))
+
+list2 = range(5,14) #cutomize the starting point, and still excludes the 2nd input
+print(list(list2))
+
+list3 = range(1,100,10) #3rd input is the # it will skip to the next output
+print(list(list3))
+
+#list4 = range(100,10) #must have 0 if doing all 3 inputs so it will know where to start
+list4 = range(0,100,10)
+print(list(list4))
+
+#List 1 Review
+first_names = ["Ainsley", "Ben", "Chani", "Depak"]
+age = []
+age.append(42)
+all_ages = [32, 41, 29] + age
+name_and_age = zip(first_names, all_ages)
+ids = range(4)
+all_customers = zip(list(name_and_age), ids)
+  #Answer: [(('Ainsley', 32), 0), (('Ben', 41), 1), (('Chani', 29), 2), (('Depak', 42), 3)]
+all_customers = zip(ids, first_names, all_ages)
+  #Answer: [(0, 'Ainsley', 32), (1, 'Ben', 41), (2, 'Chani', 29), (3, 'Depak', 42)]
+print(list(all_customers))
+
