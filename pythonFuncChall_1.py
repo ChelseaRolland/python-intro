@@ -16,12 +16,28 @@ print(square_root(100))
 
 #3. Win Percentage
 def win_percentage(wins, losses):
-    #total = wins + losses
-    #win_ratio = (wins / total) * 100
-    #win_ratio = (wins / (wins + losses)) * 100
     return (wins / (wins + losses)) * 100
 
 #3 Tests
 print(win_percentage(120, 80))
 print(win_percentage(5, 5))
 print(win_percentage(10, 0))
+
+#4. Average
+def average(num1, num2):
+    return (num1 + num2) / 2
+
+#4 Tests
+print(average(1,100))
+print(average(1,-1))
+print(average(15,30))
+
+#5. Remainder
+def remainder(num1, num2):
+    numerator = num1 * 2
+    denominator = num2 / 2
+    return numerator % denominator
+
+#5 Tests
+print(remainder(15, 14))
+print(remainder(9,6))
