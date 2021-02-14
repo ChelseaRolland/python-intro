@@ -16,6 +16,7 @@ def append_sum(lst):
 
 #2. Tests
 print("2.1 Test: ", append_sum([1,1,2]))
+print("2.2 Test: ", append_sum([3, 4, 5]))
 
 #3. Larger List
 
