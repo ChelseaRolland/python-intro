@@ -19,4 +19,13 @@ print("2.1 Test: ", append_sum([1,1,2]))
 print("2.2 Test: ", append_sum([3, 4, 5]))
 
 #3. Larger List
+def larger_list(lst1, lst2):
+    if len(lst1) >= len(lst2):
+        return lst1[-1]
+    else:
+        return lst2[-1]
 
+#3. Tests
+print(larger_list([4,10,2,5],[-10,2,5,10]))  #5
+
+#4.
