@@ -36,7 +36,10 @@ def more_than_n(lst, item, n):
         return False
 
 #4. Tests
-print(more_than_n([2, 4, 6, 2, 3, 2, 1, 2], 2, 3))
-
+print(more_than_n([2, 4, 6, 2, 3, 2, 1, 2], 2, 3)) #True
 
 #5. Combine Sort
+def combine_sort(lst1, lst2):
+    return sorted(lst1 + lst2)
+
+print(combine_sort([4, 10, 2, 5], [-10, 2, 5, 10])) #[-10, 2, 2, 4, 5, 5, 10, 10]
