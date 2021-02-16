@@ -28,4 +28,15 @@ def larger_list(lst1, lst2):
 #3. Tests
 print(larger_list([4,10,2,5],[-10,2,5,10]))  #5
 
-#4.
+#4. More than N
+def more_than_n(lst, item, n):
+    if lst.count(item) > n:
+        return True
+    else:
+        return False
+
+#4. Tests
+print(more_than_n([2, 4, 6, 2, 3, 2, 1, 2], 2, 3))
+
+
+#5. Combine Sort
