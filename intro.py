@@ -340,3 +340,93 @@ print(one_element_tuple)
 one_element_tuple = (4,)
 print(one_element_tuple)
 
+#Loops
+dog_breeds = ['french_bulldog', 'dalmatian', 'shihtzu', 'poodle', 'collie']
+
+for breed in dog_breeds:
+  print("beginning of loops - Dog Breeds: ",breed)
+
+board_games = ['Settlers of Catan', 'Carcassone','Power Grid', 'Agricola', 'Scrabble']
+
+sport_games = ['football', 'football - American','hockey', 'baseball', 'cricket']
+
+for game in board_games:
+  print("Board Games: ",game)
+
+for sport in sport_games:
+  print("Sports Games: ",sport)
+
+promise = "I will not chew gum in class"
+
+for i in range(5):
+  print(promise)
+
+students_period_A = ["Alex", "Briana", "Cheri", "Daniele"]
+students_period_B = ["Dora", "Minerva", "Alexa", "Obie"]
+
+for student in students_period_A:  # Alex, Briana, Cheri, Daniele
+  students_period_B.append(student)
+  print(student)
+
+#Breaks
+dog_breeds_available_for_adoption = [
+    'french_bulldog', 'dalmatian', 'shihtzu', 'poodle', 'collie']
+dog_breed_I_want = 'dalmatian'
+
+for breed in dog_breeds_available_for_adoption:
+  print(breed)
+  if breed == dog_breed_I_want:
+    print("They have the dog I want!")
+    break
+
+#Continue
+ages = [12, 38, 34, 26, 21, 19, 67, 41, 17]
+for age in ages:
+  if age < 21:
+    continue
+  print(age)
+
+#While Loops
+all_students = ["Alex", "Briana", "Cheri", "Daniele","Dora", "Minerva", "Alexa", "Obie", "Arius", "Loki"]
+students_in_poetry = []
+
+while len(students_in_poetry) < 6:
+  student = all_students.pop()
+  students_in_poetry.append(student)
+
+print(students_in_poetry)
+
+#Nested Loops
+sales_data = [[12, 17, 22], [2, 10, 3], [5, 12, 13]]
+scoops_sold = 0
+for sale in sales_data:
+  print(sale)
+  for location in sale:
+    scoops_sold += location
+
+  print(scoops_sold)
+
+#List Comprehensions --> Makes new lists out of existing lists
+heights = [161, 164, 156, 144, 158, 170, 163, 163, 157]
+can_ride_coaster = [height for height in heights if height > 161]
+print(can_ride_coaster)
+
+celsius = [0, 10, 15, 32, -5, 27, 3]
+fahrenheit = [degree * 9/5 + 32 for degree in celsius]
+print(fahrenheit)
+
+#Loops Review
+single_digits = list(range(10))
+print("Single Digits Lists: ",single_digits)
+
+squares = []
+cubes = []
+
+for num in single_digits:
+  print(num)
+  squares.append(num**2)
+  cubes.append(num**3)
+
+print("Squares: ",squares)
+print("Cubes: ",cubes)
+
