@@ -321,4 +321,22 @@ games = ['Portal', 'Minecraft', 'Pacman', 'Tetris', 'The Sims', 'Pokemon']
 games_sorted = sorted(games)
 print(games_sorted)
 
+#Tuples --> immutable aka can't be changed and when you have data in a specific order that you do not want to change
+my_info = ("Chelsea", 27, "Programmer")
+print(my_info)
+print(my_info[0])
+print(my_info[1])
+print(my_info[-1])
+#my_info[0] = "Coven" #Can't work due to immutable of portions
+
+#Unpacking a Tuple
+name, age, occupation = my_info
+print(name)
+print(age)
+print(occupation)
+
+one_element_tuple = (4)
+print(one_element_tuple)
+one_element_tuple = (4,)
+print(one_element_tuple)
 
