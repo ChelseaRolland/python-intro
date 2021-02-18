@@ -430,3 +430,14 @@ for num in single_digits:
 print("Squares: ",squares)
 print("Cubes: ",cubes)
 
+i = 1
+while i <= 10:
+  print(i)
+  i += 1
+
+for i in range(3):
+  print(i)
+
+desired_lists = [-1,0,1,2,3]
+copied_desired_list = [i - 1 for i in range(5)]
+print(copied_desired_list)
