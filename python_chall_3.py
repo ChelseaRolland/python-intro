@@ -158,14 +158,13 @@ print("Same Values 9.3: ", same_values([-33, -100, -10, 4], [-33, -100, -10, 3])
 
 #10 Reversed Lists
 def reversed_list(lst1, lst2):
-    counter = 0
     for i in range(len(lst1)):
-        if lst1[i] == lst2[len(lst2) - 1 - i]:
-            counter += 1    
-    if counter == len(lst1):
-        return True
-    else:
-        return False
+        #Checking for the 1s that are not true, if this pings once, then they do not equal
+        if lst1[i] != lst2[len(lst2) - 1 - i]:
+            return False    
+    #if the above for loop doesn't have any pings for False, then the elements match thus returning true
+    return True
+
 
 #10 Tests
 print("Reversed List 10.1: ",reversed_list([1, 2, 3], [3, 2, 1]))
