@@ -1,0 +1,24 @@
+#Checking Armstrong # for 3 Digits
+#-------------------------------------
+
+#input from the user
+num =  int(input("Enter a number: "))
+
+def three_armstrong_digits(num):
+    #initalize sum
+    sum = 0
+    #find the sum of the cube of each digit
+    temp = num
+    while temp > 0:
+        remainder = temp % 10
+        sum += remainder ** 3
+        temp //= 10
+
+    if num == sum:
+        print(num, "is an Armstrong number")
+        return "True"
+    else:
+        print(num, "is not an Armstrong number")
+        return "False"
+
+print("3 Digit Armstrong Number: ",three_armstrong_digits(num))
