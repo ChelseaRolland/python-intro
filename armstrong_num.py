@@ -35,7 +35,7 @@ def n_digits_armstrong(num):
     #find the sum of the order(# of digits) of each digit
     temp = num
     while temp > 0:
-        remainder = temp % 0
+        remainder = temp % 10
         sum += remainder ** order
         temp //= 10
     
@@ -46,7 +46,7 @@ def n_digits_armstrong(num):
         print(num, " is not an Armstrong Number")
         return "False"
 
-#print("N Digits Armstrong Number: ", n_digits_armstrong(num))
+print("N Digits Armstrong Number: ", n_digits_armstrong(num))
 
 if len(str(num)) == 3:
     print("3 Digit Armstrong Number: ", three_armstrong_digits(num))
