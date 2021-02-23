@@ -441,3 +441,59 @@ for i in range(3):
 desired_lists = [-1,0,1,2,3]
 copied_desired_list = [i - 1 for i in range(5)]
 print(copied_desired_list)
+
+#Strings
+my_name = "Chelsea"
+first_initial = my_name[0]
+print("First Initial: ", first_initial)
+
+#Slicing String
+first_name = "Rodrigo"
+last_name = "Villanueva"
+
+new_account = last_name[:5]
+print("Slicing Strings 1.1: ", new_account)
+temp_password = last_name[2:6]
+print("Slicing Strings 1.2: ", temp_password)
+
+#Concatenating Strings
+def account_generator(first_name, last_name):
+	return first_name[:3] + last_name[:3]
+
+first_name = "Julie"
+last_name = "Blevins"
+new_account = account_generator(first_name, last_name)
+
+print("String Concatenation 1.1: ", new_account)
+
+#Addition String Slicing (Length of string)
+first_name = "Reiko"
+last_name = "Matsuki"
+
+def password_generator(first_name, last_name):
+    	return first_name[len(first_name) - 3:] + last_name[len(last_name) - 3:]
+
+temp_password = password_generator(first_name,last_name)
+
+print("Slicing via Length of Strings: ", temp_password)
+
+#Negative Indices
+company_motto = "Copeland's Corporate Company helps you capably cope with the constant cacophony of daily life"
+second_to_last = company_motto[-2]
+print("Negative Indicies 1.1:",second_to_last)
+final_word = company_motto[-4:]
+print("Negative Indicies 1.2: ",final_word)
+
+#Strings are Immutable (Unchangeable)
+first_name = "Bob"
+last_name = "Daily"
+
+#first_name[0] = "R" --> Doesn't work due to immutable property
+fixed_first_name = "R" + first_name[1:] #changing the 1st letter of a word
+print("Fixed First Name with Slicing: ", fixed_first_name)
+
+#Escape Characters
+password = "theycallme\"crazy\"91"
+print("Escape Characters: ", password)
+
+#Iterating through Strings
