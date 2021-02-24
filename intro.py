@@ -497,3 +497,45 @@ password = "theycallme\"crazy\"91"
 print("Escape Characters: ", password)
 
 #Iterating through Strings
+def get_length(word):
+	counter = 0
+	for letter in word:
+		counter += 1
+	return counter
+
+print("Iterating through Strings 1.1: ", get_length("love"))
+print("Iterating through Strings 1.2: ", get_length("baconator"))
+print("Iterating through Strings 1.3: ", get_length("spider-man"))
+
+#Strings and Conditionals pt.#1
+def letter_check(word, letter):
+    counter = 0
+    for char in word:
+        if char == letter:
+            counter += 1
+    if counter > 0:
+        return True
+    else:
+        return False
+
+print("String and Conditionals 1.1: ",letter_check("strawberry", "a"))
+
+#String and Conditionals pt.#2
+def contains(big_string, little_string):
+    return little_string in big_string
+
+print("Contains 1.1: ", contains("watermelon", "melon"))
+print("Contains 1.2: ", contains("watermelon", "berry"))
+
+def common_letters(string_one, string_two):
+    common = []
+    for letter in string_one:
+        if (letter in string_two) and not (letter in common):
+            common.append(letter)
+    return common
+
+print("Common Letters 1.1: ", common_letters("banana", "cream"))
+print("Common Letters 1.2: ", common_letters("manhattan", "san francisco"))
+
+
+
