@@ -537,5 +537,3 @@ def common_letters(string_one, string_two):
 print("Common Letters 1.1: ", common_letters("banana", "cream"))
 print("Common Letters 1.2: ", common_letters("manhattan", "san francisco"))
 
-
-
