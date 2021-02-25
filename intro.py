@@ -537,3 +537,29 @@ def common_letters(string_one, string_two):
 print("Common Letters 1.1: ", common_letters("banana", "cream"))
 print("Common Letters 1.2: ", common_letters("manhattan", "san francisco"))
 
+#String Methods
+poem_title = "spring storm"
+poem_author = "William Carlos Williams"
+
+poem_title_fixed = poem_title.title();
+print(poem_title)
+print("String Methods -  Title: ", poem_title_fixed)
+
+poem_author_fixed = poem_author.upper()
+print(poem_author)
+print("String Methods - Upper: ", poem_author_fixed)
+
+line_one = "The sky has given over"
+line_one_words = line_one.split()
+print("String Method - Split: ", line_one_words)
+
+authors = "Audre Lorde,Gabriela Mistral,Jean Toomer,An Qi,Walt Whitman,Shel Silverstein,Carmen Boullosa,Kamala Suraiyya,Langston Hughes,Adrienne Rich,Nikki Giovanni"
+
+author_names = authors.split(",")
+print("String Methods - Split Delimiters 1.1: ", author_names)
+
+author_last_names = []
+for name in author_names:
+    author_last_names.append(name.split()[-1])
+
+print("String Methods - Split Delimiters 1.2: ", author_last_names)
