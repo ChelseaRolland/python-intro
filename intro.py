@@ -639,3 +639,8 @@ my_beard_description = poem_description(
     author="Shel Silverstein", title="My Beard", original_work="Where the Sidewalk Ends", publishing_date="1974")
 
 print("format() method 2: ", my_beard_description)
+
+user_name = "::::::::Eloise :::::::::::"
+user_name_fixed = user_name.strip(":").strip()
+print("Username: ", user_name)
+print("Username Fixed: ", user_name_fixed)
