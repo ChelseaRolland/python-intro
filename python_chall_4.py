@@ -19,3 +19,16 @@ def unique_english_letters(word):
 print("Count Letters 1.1: ", unique_english_letters("mississippi"))
 print("Count Letters 1.2: ", unique_english_letters("Apple"))
 print("Count Letters 1.3: ", unique_english_letters("DudeExperience"))
+
+#2.1: Count X
+def count_char_x(word, x):
+    letter_count = 0
+    for letter in word:
+        if letter == x:
+            letter_count += 1
+    return letter_count
+    #return word.count(x)
+
+#2.1: Count X - Tests
+print("Count X 1.1: ", count_char_x("mississippi", "s"))
+print("Count X 1.2: ", count_char_x("mississippi", "m"))
