@@ -69,3 +69,15 @@ def x_length_words(sentence, x):
 #5.1 X Length - Tests
 print(x_length_words("i like apples", 2))
 print(x_length_words("he likes apples", 2))
+
+#6.1: Check Name
+def check_for_name(sentence, name):
+    name = name.lower()
+    if name in sentence.lower():
+        return True
+    return False
+
+#6.1: Check Name - Tests
+print("Check Name 6.1: ", check_for_name("My name is Jamie", "Jamie"))
+print("Check Name 6.2: ", check_for_name("My name is jamie", "Jamie"))
+print("Check Name 6.3: ", check_for_name("My name is Samantha", "Jamie"))
