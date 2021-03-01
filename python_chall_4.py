@@ -6,14 +6,11 @@ letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 def unique_english_letters(word):
     #counter
     unique_ltr = 0
-    #empty array to hold unique values
-    unique_char = []
-    #Loop through word to see which characters matches letters
-    for letter in word:
-    #Look in letters to see if letter included if so then count it
-        if letter in letters and letter not in unique_char:
+    #Loop through letter in letters to see which are in word
+    for letter in letters:
+    #Look in word to see if letter included if so then count it
+        if letter in word:
             unique_ltr += 1
-            unique_char.append(letter)
     #returning the # of unique characters inside
     #print("Unique Chararcters: ", unique_char)
     return unique_ltr
