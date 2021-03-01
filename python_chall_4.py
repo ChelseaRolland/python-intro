@@ -121,13 +121,9 @@ print("Make Spoonerism 9.3: ", make_spoonerism("a", "b"))
 
 #10.1 Add Exclamation
 def add_exclamation(word):
-    new_word = word
-    if len(word) < 20:
-        for ex in range(len(word),20):
-            new_word += "!"
-        return new_word
-    else:
-        return word
+    while len(word) < 20:
+        word += "!"
+    return word
 
 #10.1 Add Exclamation - Tests
 print("Add Exclamation 10.1: ", add_exclamation("Codecademy"))
