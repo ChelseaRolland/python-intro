@@ -81,13 +81,47 @@ print("Check Name 6.3: ", check_for_name("My name is Samantha", "Jamie"))
 
 #7.1 Every Other Letter
 def every_other_letter(word):
-    new_word = []
-    for i in range(len(word)):
-        if i % 2 == 0:
-            new_word.append(word[i])
-    return "".join(new_word)
+    new_word = ""
+    for i in range(0, len(word), 2):
+        new_word += word[i]
+    return new_word
 
 #7.1 Every Other Letter - Tests
 print("Every Other Letter 7.1: ",every_other_letter("Codecademy"))
 print("Every Other Letter 7.2: ", every_other_letter("Hello world!"))
 print("Every Other Letter 7.3: ", every_other_letter(""))
+
+#8.1 Reverse
+def reverse_string(word):
+    new_word = ""
+    for i in range(0, len(word)):
+        new_word += word[-1 - i]
+    return new_word
+
+    #another way to solve this
+    #reverse = ""
+    #for i in range(len(word)-1, -1, -1):
+        #reverse += word[i]
+    #return reverse
+
+#8.1 Reverse - Tests
+print("Reverse String 8.1: ", reverse_string("Codecademy"))
+print("Reverse String 8.2: ", reverse_string("Hello world!"))
+print("Reverse String 8.2: ", reverse_string(""))
+
+#9.1 Make Spoonerism
+def make_spoonerism(word1, word2):
+    #ex: Belly Jeans --> Jelly Beans
+    #Get the 1st letter in each word
+    first_word_inital = word1[0]
+    second_word_inital = word2[0]
+    #Then replace the value of index 0 of the words with each other
+    word1 = word1.replace(first_word_inital, second_word_inital)
+    word2 = word2.replace(second_word_inital, first_word_inital)
+    #Return the words with a space inbetween then changed
+    return "{} {}".format(word1, word2)
+
+#9.1 Make Spoonerism - Tests
+print("Make Spoonerism 9.1: ", make_spoonerism("Codecademy", "Learn"))
+print("Make Spoonerism 9.2: ", make_spoonerism("Hello", "world!"))
+print("Make Spoonerism 9.3: ", make_spoonerism("a", "b"))
