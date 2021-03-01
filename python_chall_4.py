@@ -72,12 +72,22 @@ print(x_length_words("he likes apples", 2))
 
 #6.1: Check Name
 def check_for_name(sentence, name):
-    name = name.lower()
-    if name in sentence.lower():
-        return True
-    return False
+    return name.lower() in sentence.lower()
 
 #6.1: Check Name - Tests
 print("Check Name 6.1: ", check_for_name("My name is Jamie", "Jamie"))
 print("Check Name 6.2: ", check_for_name("My name is jamie", "Jamie"))
 print("Check Name 6.3: ", check_for_name("My name is Samantha", "Jamie"))
+
+#7.1 Every Other Letter
+def every_other_letter(word):
+    new_word = []
+    for i in range(len(word)):
+        if i % 2 == 0:
+            new_word.append(word[i])
+    return "".join(new_word)
+
+#7.1 Every Other Letter - Tests
+print("Every Other Letter 7.1: ",every_other_letter("Codecademy"))
+print("Every Other Letter 7.2: ", every_other_letter("Hello world!"))
+print("Every Other Letter 7.3: ", every_other_letter(""))
