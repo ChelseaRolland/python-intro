@@ -112,16 +112,23 @@ print("Reverse String 8.2: ", reverse_string(""))
 #9.1 Make Spoonerism
 def make_spoonerism(word1, word2):
     #ex: Belly Jeans --> Jelly Beans
-    #Get the 1st letter in each word
-    first_word_inital = word1[0]
-    second_word_inital = word2[0]
-    #Then replace the value of index 0 of the words with each other
-    word1 = word1.replace(first_word_inital, second_word_inital)
-    word2 = word2.replace(second_word_inital, first_word_inital)
-    #Return the words with a space inbetween then changed
-    return "{} {}".format(word1, word2)
+    return word2[0] + word1[1:] + " " + word1[0] + word2[1:]
 
 #9.1 Make Spoonerism - Tests
 print("Make Spoonerism 9.1: ", make_spoonerism("Codecademy", "Learn"))
 print("Make Spoonerism 9.2: ", make_spoonerism("Hello", "world!"))
 print("Make Spoonerism 9.3: ", make_spoonerism("a", "b"))
+
+#10.1 Add Exclamation
+def add_exclamation(word):
+    new_word = word
+    if len(word) < 20:
+        for ex in range(len(word),20):
+            new_word += "!"
+        return new_word
+    else:
+        return word
+
+#10.1 Add Exclamation - Tests
+print("Add Exclamation 10.1: ", add_exclamation("Codecademy"))
+print("Add Exclamation 10.2: ", add_exclamation("Codecademy is the best place to learn"))
