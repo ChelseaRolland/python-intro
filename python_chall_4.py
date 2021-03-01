@@ -57,3 +57,15 @@ def substring_between_letters(word, start, end):
 #4.1: Substring Between - Tests
 print("Substring Between 4.1: ",substring_between_letters("apple", "p", "e"))
 print("Substring Between 4.2: ",substring_between_letters("apple", "p", "c"))
+
+#5.1 X Length
+def x_length_words(sentence, x):
+    sent_list = sentence.split()
+    for word in sent_list:
+        if len(word) < x:
+            return False
+    return True
+
+#5.1 X Length - Tests
+print(x_length_words("i like apples", 2))
+print(x_length_words("he likes apples", 2))
