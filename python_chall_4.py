@@ -30,5 +30,30 @@ def count_char_x(word, x):
     #return word.count(x)
 
 #2.1: Count X - Tests
-print("Count X 1.1: ", count_char_x("mississippi", "s"))
-print("Count X 1.2: ", count_char_x("mississippi", "m"))
+print("Count X 2.1: ", count_char_x("mississippi", "s"))
+print("Count X 2.2: ", count_char_x("mississippi", "m"))
+
+#3.1: Count Multi X
+def count_multi_char_x(word, x):
+    splits = word.split(x)
+    print(splits)
+    return len(splits) - 1
+    #return word.count(x)
+
+#3.1: Count Multi X - Tests
+print("Count Multi X 3.1: ", count_multi_char_x("mississippi", "iss"))
+print("Count Multi X 3.2: ", count_multi_char_x("apple", "pp"))
+
+#4.1: Substring Between
+def substring_between_letters(word, start, end):
+    first_index = word.find(start)
+    last_index = word.find(end)
+    if (first_index and last_index) != -1:
+        # +1 so it will include the letters between the start and not the start
+        return word[first_index + 1:last_index]
+    else:
+        return word
+
+#4.1: Substring Between - Tests
+print("Substring Between 4.1: ",substring_between_letters("apple", "p", "e"))
+print("Substring Between 4.2: ",substring_between_letters("apple", "p", "c"))
