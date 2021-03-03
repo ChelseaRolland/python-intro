@@ -711,3 +711,80 @@ print("Get Dictionary Key Value 1.1: ",zodiac_elements["earth"])
 print("Get Dictionary Key Value 1.2: ",zodiac_elements["fire"])
 print("Get Dictionary Key Value 1.3: ",zodiac_elements["water"])
 print("Get Dictionary Key Value 1.4: ",zodiac_elements["air"])
+
+#Get an Invalid Key
+#print(zodiac_elements["energy"]) --> Doesn't work
+#Check if does
+key_check = "energy"
+if key_check in zodiac_elements: #this will be false so it will never access the invalid key
+    print(zodiac_elements["energy"])
+zodiac_elements["energy"] = "Not a Zodiac element"
+print(zodiac_elements["energy"])
+
+#Try/Expect --> similar to try/catch block in java and javascript
+caffeine_level = {"espresso": 64, "chai": 40, "decaf": 0, "drip": 120}
+caffeine_level["matcha"] = 30
+try:
+    print(caffeine_level["matcha"])
+except KeyError:
+    print("Unknown Caffeine Level")
+
+#.get() for Dictionaries
+user_ids = {"teraCoder": 100019, "pythonGuy": 182921, "samTheJavaMaam": 123112, "lyleLoop": 102931, "keysmithKeith": 129384}
+
+tc_id = user_ids.get("teraCoder", 100000)
+print("get() method with Dicitonaries 1.1: ", tc_id)
+stack_id = user_ids.get("superStackSmash", 100000)
+print("get() method with Dicitonaries 1.2: ", stack_id)
+
+#Deleting a Key --> .pop() for Dictionaries
+available_items = {"health potion": 10, "cake of the cure": 5, "green elixir": 20, "strength sandwich": 25, "stamina grains": 15, "power stew": 30}
+health_points = 20
+
+health_points += available_items.pop("stamina grains", 0)
+print("Games - HP 1.1: ", health_points)
+health_points += available_items.pop("power stew", 0)
+print("Games - HP 1.2: ", health_points)
+health_points += available_items.pop("mystic bread", 0)
+print("Games - HP 1.3: ", health_points)
+print("Game - Remaining Items: ", available_items)
+print("Game - Current HP: ", health_points)
+
+#Get all Keys
+user_ids = {"teraCoder": 100019, "pythonGuy": 182921, "samTheJavaMaam": 123112, "lyleLoop": 102931, "keysmithKeith": 129384}
+num_exercises = {"functions": 10, "syntax": 13, "control flow": 15, "loops": 22, "lists": 19, "classes": 18, "dictionaries": 18}
+
+users = user_ids.keys()
+lessons = num_exercises.keys()
+print("dict_keys - .keys() 1.1: ", users)
+print("dict_keys - .keys() 1.1: ", lessons)
+
+#Get all Values --> .values()
+total_exercises = 0
+for lesson in num_exercises.values():
+    total_exercises += lesson
+
+print("dict_values - .values()", total_exercises)
+
+#Get all Items .items() --> will return a tuple
+pct_women_in_occupation = {"CEO": 28, "Engineering Manager": 9, "Pharmacist": 58, "Physician": 40, "Lawyer": 37, "Aerospace Engineer": 9}
+
+for position,percent in pct_women_in_occupation.items():
+    print("Women make up " + str(percent) + " percent of " + position + "s.")
+    print("Women make up {} percent of {}s.".format(percent, position))
+
+#Review Using Dictionaries
+tarot = {1:	"The Magician", 2:	"The High Priestess", 3:	"The Empress", 4:	"The Emperor", 5:	"The Hierophant", 6:	"The Lovers", 7:	"The Chariot", 8:	"Strength", 9:	"The Hermit", 10:	"Wheel of Fortune", 11:	"Justice", 12:	"The Hanged Man", 13:	"Death", 14:	"Temperance", 15:	"The Devil", 16:	"The Tower", 17:	"The Star", 18:	"The Moon", 19:	"The Sun", 20:	"Judgement", 21:	"The World", 22: "The Fool"}
+
+spread = {}
+spread["past"] = tarot.pop(13)
+spread["present"] = tarot.pop(22)
+spread["future"] = tarot.pop(10)
+
+for num, card in spread.items():
+    print("Your {} is the {} card.".format(num, card))
+
+
+
+
+
