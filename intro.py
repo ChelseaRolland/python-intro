@@ -644,3 +644,34 @@ user_name = "::::::::Eloise :::::::::::"
 user_name_fixed = user_name.strip(":").strip()
 print("Username: ", user_name)
 print("Username Fixed: ", user_name_fixed)
+
+#Dictionaries
+sensors = {"living room": 21, "kitchen": 23, "bedroom": 20, "pantry": 22}
+num_cameras = {"backyard": 6,  "garage": 2, "driveway": 1}
+
+print("Dictionaries 1.1: ", sensors)
+print("Dictionaries 1.2: ", num_cameras)
+
+#Creating Dictionaries
+translations = {"mountain": "orod", "bread": "bass", "friend": "mellon", "horse": "roch"}
+print("Dictionaries: 1.3: ", translations)
+
+#Only Numbers and Strings can be key values since they are hashable and don't change; values can be any data type
+children = {"von Trapp": ["Johannes", "Rosmarie", "Eleonore"], "Corleone": ["Sonny", "Fredo", "Michael"]}
+
+#Empty Dictionary
+my_empty_dictionary = {}
+
+#Adding a key to Dictionaries
+animals_in_zoo = {}
+animals_in_zoo["zebras"] = 8
+animals_in_zoo["monkeys"] = 12
+animals_in_zoo["dinosaurs"] = 0
+print("Adding Keys to Dictionaries: ", animals_in_zoo)
+
+#Adding Mutliple Keys
+user_ids = {"teraCoder": 9018293, "proProgrammer": 119238}
+
+
+
+
