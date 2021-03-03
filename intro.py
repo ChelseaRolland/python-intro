@@ -656,7 +656,7 @@ print("Dictionaries 1.2: ", num_cameras)
 translations = {"mountain": "orod", "bread": "bass", "friend": "mellon", "horse": "roch"}
 print("Dictionaries: 1.3: ", translations)
 
-#Only Numbers and Strings can be key values since they are hashable and don't change; values can be any data type
+#Only Numbers, Strings, and Tuples can be keys since they are immuatable; values can be any data type
 children = {"von Trapp": ["Johannes", "Rosmarie", "Eleonore"], "Corleone": ["Sonny", "Fredo", "Michael"]}
 
 #Empty Dictionary
@@ -671,7 +671,43 @@ print("Adding Keys to Dictionaries: ", animals_in_zoo)
 
 #Adding Mutliple Keys
 user_ids = {"teraCoder": 9018293, "proProgrammer": 119238}
+user_ids.update({"theLooper": 138475, "stringQueen": 85739})
+print("Adding Multiple Keys to Dictionary: ", user_ids)
 
+#Overwritting Values in Dictionaries
+oscar_winners = {"Best Picture": "La La Land", "Best Actor": "Casey Affleck", "Best Actress": "Emma Stone", "Animated Feature": "Zootopia"}
 
+oscar_winners["Supporting Actress"] = "Viola Davis"
+oscar_winners["Best Picture"] = "Moonlight"
 
+print("Overwritting Values: ", oscar_winners)
 
+#List Comprehensions to Dictionaries
+drinks = ["espresso", "chai", "decaf", "drip"]
+caffeine = [64, 40, 0, 120]
+
+zipped_drinks = zip(drinks, caffeine)
+drinks_to_caffeine = {key:value for key, value in zipped_drinks }
+print("List Comprehension with Dictionaries: ", drinks_to_caffeine)
+
+#Creating Dictionaries Recap
+songs = ["Like a Rolling Stone", "Satisfaction", "Imagine", "What's Going On", "Respect", "Good Vibrations"]
+playcounts = [78, 29, 44, 21, 89, 5]
+plays = {key:value for key, value in zip(songs, playcounts)}
+print("Plays Dictionary: ", plays)
+
+plays["Purple Haze"] = 1
+plays["Respect"] = 94
+
+library = {"The Best Songs": plays, "Sunday Feelings": {}}
+print("Library Dictionary: ", library)
+
+#Using Dictionaries
+
+#Getting a key
+zodiac_elements = {"water": ["Cancer", "Scorpio", "Pisces"], "fire": ["Aries", "Leo", "Sagittarius"], "earth": ["Taurus", "Virgo", "Capricorn"], "air":["Gemini", "Libra", "Aquarius"]}
+
+print("Get Dictionary Key Value 1.1: ",zodiac_elements["earth"])
+print("Get Dictionary Key Value 1.2: ",zodiac_elements["fire"])
+print("Get Dictionary Key Value 1.3: ",zodiac_elements["water"])
+print("Get Dictionary Key Value 1.4: ",zodiac_elements["air"])
