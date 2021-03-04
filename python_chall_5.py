@@ -87,9 +87,17 @@ def frequency_dictionary(words):
 print("Chall 7.1: ", frequency_dictionary(["apple", "apple", "cat", 1]))
 print("Chall 7.2: ", frequency_dictionary([0,0,0,0,0]))
 
-#8.
+#8. Unique Values
+def unique_values(my_dictionary):
+    special = []
+    for val in my_dictionary.values():
+        if val not in special:
+            special.append(val)
+    return len(special)
 
 #8 - Tests
+print("Chall 8.1: ", unique_values({0:3, 1:1, 4:1, 5:3}))
+print("Chall 8.2: ", unique_values({0:3, 1:3, 4:3, 5:3}))
 
 #9.
 
