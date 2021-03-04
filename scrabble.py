@@ -35,7 +35,7 @@ print(brownie_points)                       #15 points
 players = ["player1", "wordNerd", "Lexi Con", "Prof Reader"]
 words = [["BLUE", "TENNIS", "EXIT"], ["EARTH", "EYES", "MACHINE"], ["ERASER", "BELLY", "HUSKY"], ["ZAP", "COMA", "PERIOD"]]
 player_to_words = {key:value for key, value in zip(players, words)}
-#print("Players to Words: ", player_to_words)
+print("Players to Words: ", player_to_words)
 
 players_to_points = {}
 for player, words in player_to_words.items():
@@ -45,5 +45,20 @@ for player, words in player_to_words.items():
     players_to_points[player] = player_points
 print(players_to_points)
 
+def play_word(player, word):
+    if player in player_to_words:
+        player_to_words[player].append(word.upper())
+    else:
+        print("Not a player part of the game. Please enter a valid player name")
 
+play_word("player1", "bacon")
 
+def update_point_totals(player_to_words, players_to_points):
+    for player, words in player_to_words.items():
+        player_points = 0
+        for word in words:
+            player_points += score_word(word)
+        players_to_points[player] = player_points
+    return players_to_points
+
+print(update_point_totals(player_to_words, players_to_points))
