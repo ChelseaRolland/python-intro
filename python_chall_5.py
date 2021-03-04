@@ -34,19 +34,29 @@ print("Chall 3.2: ", add_ten({10:1, 100:2, 1000:3}))
 #4. Values that are Keys
 def values_that_are_keys(my_dictionary):
     values_are_keys = []
-    for key in my_dictionary.keys():
-        for value in my_dictionary.values():
-            if value == key:
-                values_are_keys.append(value)
+    for value in my_dictionary.values():
+        if value in my_dictionary.keys():
+            values_are_keys.append(value)
     return values_are_keys
 
 #4 - Tests
 print("Chall 4.1: ", values_that_are_keys({1:100, 2:1, 3:4, 4:10}))
 print("Chall 4.2: ", values_that_are_keys({"a":"apple", "b":"a", "c":100}))
 
-#5.
+#5. Largest Value
+def max_key(my_dictionary):
+    max_val = 0
+    for value in my_dictionary.values():
+        if max_val < value:
+            max_val = value
+    val_list = list(my_dictionary.values())
+    key_list = list(my_dictionary.keys())
+    position = val_list.index(max_val)
+    return key_list[position]
 
 #5 - Tests
+print("Chall 5.1: ", max_key({1:100, 2:1, 3:4, 4:10}))
+print("Chall 5.2: ", max_key({"a":100, "b":10, "c":1000}))
 
 #6.
 
