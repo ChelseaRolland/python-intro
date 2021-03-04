@@ -31,9 +31,18 @@ def add_ten(my_dictionary):
 print("Chall 3.1: ", add_ten({1:5, 2:2, 3:3}))
 print("Chall 3.2: ", add_ten({10:1, 100:2, 1000:3}))
 
-#4.
+#4. Values that are Keys
+def values_that_are_keys(my_dictionary):
+    values_are_keys = []
+    for key in my_dictionary.keys():
+        for value in my_dictionary.values():
+            if value == key:
+                values_are_keys.append(value)
+    return values_are_keys
 
 #4 - Tests
+print("Chall 4.1: ", values_that_are_keys({1:100, 2:1, 3:4, 4:10}))
+print("Chall 4.2: ", values_that_are_keys({"a":"apple", "b":"a", "c":100}))
 
 #5.
 
