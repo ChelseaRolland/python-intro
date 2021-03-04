@@ -45,22 +45,30 @@ print("Chall 4.2: ", values_that_are_keys({"a":"apple", "b":"a", "c":100}))
 
 #5. Largest Value
 def max_key(my_dictionary):
-    max_val = 0
-    for value in my_dictionary.values():
-        if max_val < value:
+    max_key = float("-inf")
+    max_val = float("-inf")
+    for key, value in my_dictionary.items():
+        if value > max_val:
             max_val = value
-    val_list = list(my_dictionary.values())
-    key_list = list(my_dictionary.keys())
-    position = val_list.index(max_val)
-    return key_list[position]
+            max_key = key
+    return max_key
 
 #5 - Tests
 print("Chall 5.1: ", max_key({1:100, 2:1, 3:4, 4:10}))
 print("Chall 5.2: ", max_key({"a":100, "b":10, "c":1000}))
 
-#6.
+#6. Word Length Dict
+def word_length_dictionary(words):
+    word_length = []
+    for word in words:
+        word_length.append(len(word))
+
+    word_length_dic = {key:value for key, value in zip(words, word_length)}
+    return word_length_dic
 
 #6 - Tests
+print("Chall 6.1: ", word_length_dictionary(["apple", "dog", "cat"]))
+print("Chall 6.2: ", word_length_dictionary(["a", ""]))
 
 #7.
 
