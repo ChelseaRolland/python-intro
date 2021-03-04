@@ -99,6 +99,15 @@ def unique_values(my_dictionary):
 print("Chall 8.1: ", unique_values({0:3, 1:1, 4:1, 5:3}))
 print("Chall 8.2: ", unique_values({0:3, 1:3, 4:3, 5:3}))
 
-#9.
+#9. Count First Letter
+def count_first_letter(names):
+    initals = {}
+    for key, value in names.items():
+        if key[0] not in initals:
+            initals[key[0]] = 0
+        initals[key[0]] += len(value)
+    return initals
 
 #9 - Tests
+print("Chall 9.1: ", count_first_letter({"Stark": ["Ned", "Robb", "Sansa"], "Snow" : ["Jon"], "Lannister": ["Jaime", "Cersei", "Tywin"]}))
+print("Chall 9.2: ", count_first_letter({"Stark": ["Ned", "Robb", "Sansa"], "Snow" : ["Jon"], "Sannister": ["Jaime", "Cersei", "Tywin"]}))
