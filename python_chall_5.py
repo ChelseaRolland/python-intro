@@ -21,9 +21,15 @@ def sum_even_keys(my_dictionary):
 print("Chall 2.1: ", sum_even_keys({1:5, 2:2, 3:3}))
 print("Chall 2.2: ", sum_even_keys({10:1, 100:2, 1000:3}))
 
-#3.
+#3. Add Ten
+def add_ten(my_dictionary):
+    for key in my_dictionary.keys():
+        my_dictionary[key] += 10
+    return my_dictionary
 
 #3 - Tests
+print("Chall 3.1: ", add_ten({1:5, 2:2, 3:3}))
+print("Chall 3.2: ", add_ten({10:1, 100:2, 1000:3}))
 
 #4.
 
