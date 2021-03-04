@@ -59,20 +59,33 @@ print("Chall 5.2: ", max_key({"a":100, "b":10, "c":1000}))
 
 #6. Word Length Dict
 def word_length_dictionary(words):
-    word_length = []
+    word_length = {}
     for word in words:
-        word_length.append(len(word))
+        word_length[word] = len(word)
 
-    word_length_dic = {key:value for key, value in zip(words, word_length)}
-    return word_length_dic
+    return word_length
 
 #6 - Tests
 print("Chall 6.1: ", word_length_dictionary(["apple", "dog", "cat"]))
 print("Chall 6.2: ", word_length_dictionary(["a", ""]))
 
-#7.
+#7. Frequency Count
+def frequency_dictionary(words):
+    frequency_dic = {}
+    for word in words:
+        frequency_dic[word] = words.count(word)
+    return frequency_dic
+
+    #Another way to solve
+    #for word in words:
+        #if word not in frequency_dic:
+            #frequency_dic[word] = 0
+    #frequency_dic[word] += 1
+    #return frequency_dic
 
 #7 - Tests
+print("Chall 7.1: ", frequency_dictionary(["apple", "apple", "cat", 1]))
+print("Chall 7.2: ", frequency_dictionary([0,0,0,0,0]))
 
 #8.
 
