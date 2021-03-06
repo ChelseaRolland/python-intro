@@ -1,4 +1,5 @@
 import csv
+import json
 
 #Math and Calculations
 print(5+2)
@@ -850,8 +851,20 @@ with open("logger.csv", "w") as logger_csv:
     for row in access_log:
         log_writer.writerow(row)
 
+#Reading JSON
+with open("message.json") as message_json:
+    message_reader = json.load(message_json)
+    print(message_reader["age"])
+    print(message_reader["eyeColor"])
+    print(message_reader["balance"])
+    print(message_reader["name"])
 
+#Writing a JSON file
+data_payload = [
+    {'interesting message': 'What is JSON? A web application\'s little pile of secrets.', 'follow up': 'But enough talk!'}
+]
 
-
+with open("data_ex_1.json", "w") as json_file:
+    json.dump(data_payload, json_file)
 
 

@@ -1,0 +1,14 @@
+{
+    "_id": "60431d5040bcfaa5ade324ba",
+    "index": 0,
+    "guid": "cbacad48-b070-4153-82c6-76306b8e2332",
+    "isActive": false,
+    "balance": "$3,111.62",
+    "picture": "http://placehold.it/32x32",
+    "age": 37,
+    "eyeColor": "green",
+    "name": {
+        "first": "Natasha",
+        "last": "Ball"
+    }
+}
