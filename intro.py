@@ -1,3 +1,5 @@
+import csv
+
 #Math and Calculations
 print(5+2)
 print(9-8)
@@ -816,6 +818,18 @@ gen_file.write("Testing out the old way of doing things before the with keyword 
 gen_file.close()
 
 #CSV --> Comma Separated Values
+#Opening and Reading users.csv
+with open("users.csv") as users_file:
+    print(users_file.read())
+
+with open("users.csv", newline="") as users_csv:
+    list_of_email_addresses = []
+    #Converts the lines in csv file to dictionaries
+    user_reader = csv.DictReader(users_csv)
+    for user in user_reader:
+        list_of_email_addresses.append(user["Email"])
+    print(list_of_email_addresses)
+
 
 
 
