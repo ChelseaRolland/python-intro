@@ -784,6 +784,39 @@ spread["future"] = tarot.pop(10)
 for num, card in spread.items():
     print("Your {} is the {} card.".format(num, card))
 
+#Files
+with open("welcome.txt") as text_file:
+    text_data = text_file.read()
+
+print("Text Data - Files 1.1: ", text_data)
+
+#Iterating through multiple lines
+with open("song_lyrics.txt") as song_lyrics:
+    for line in song_lyrics.readlines():
+        print(line)
+
+#Reading a Line
+with open("song_lyrics.txt") as song:
+    first_line = song.readline()
+    second_line = song.readline()
+    print("1st Line: ", first_line)
+    print("2nd Line: ", second_line)
+
+#Writing a File
+with open("generated_file.txt", "w") as gen_file:
+    gen_file.write("Woah this is really cool to test out! \n")
+
+#Appending a File
+with open("generated_file.txt", "a") as gen_file:
+    gen_file.write("So I am adding to this with using the appending option \n")
+
+#Classic file manipulation with .close() --> its best to use with
+gen_file = open("generated_file.txt", "a")
+gen_file.write("Testing out the old way of doing things before the with keyword \n")
+gen_file.close()
+
+#CSV --> Comma Separated Values
+
 
 
 
