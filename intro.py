@@ -867,4 +867,70 @@ data_payload = [
 with open("data_ex_1.json", "w") as json_file:
     json.dump(data_payload, json_file)
 
+#Classes
+print(type(5))  #<class "int">
+my_dict = {"name": "Chelsea", "favorite colors": ["vermillion", "jade green", "teal"]}
+print(type(my_dict))    #<class "dict">
+my_list = ["random", 4, "dailies", 110]
+print(type(my_list))    #<class "list">
 
+#structure of class, for now leave the pass as we are intentially leaving class blank for now
+class Facade:
+    pass
+
+#Instantiation
+facade_1 = Facade()
+facade_1_type = type(facade_1)
+print(facade_1_type)    #<class "__main__.Facade">
+
+#Class Variables aka: properties/fields
+class Grade:
+    minimum_passing = 65
+
+my_grade = Grade()
+print(my_grade.minimum_passing) #65
+
+#Methods
+class Rules:
+    def washing_brushes(self):
+        return "Point bristles towards the basin while washing your brushes."
+
+class Circle:
+    pi = 3.14
+    def area(self, radius):
+        return self.pi * radius ** 2
+
+#Creating the Cirlce object
+circle = Circle()
+#Find the radius 1st
+
+#1 
+pizza_area = circle.area(12 / 2)
+print("Pizza Area: ", pizza_area)
+
+#2
+teaching_table_area = circle.area(36 / 2)
+print("Teaching Table Area: ", teaching_table_area)
+
+#3
+round_room_area = circle.area(11460 / 2)
+print("Round Room Area: ", round_room_area)
+
+#Constructors
+class Cylinder:
+    def __init__(self, height, radius):
+        print("Your circle's diameter is {}, based on the radius: {}".format((radius * 2), radius))
+        self.height = height
+        self.radius = radius
+        
+    pi = 3.14
+        
+    def surface_area(self, radius, height):
+        return 2 * self.pi * radius * (height + radius)
+    
+    def volume(self, radius, height):
+        return self.pi * height * (radius ** 2)
+
+cyclinder_1 = Cylinder(height = 13, radius = 33)
+print(cyclinder_1.surface_area(radius = 33, height = 13))
+print(cyclinder_1.volume(radius = 33, height = 13))
