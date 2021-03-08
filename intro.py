@@ -922,15 +922,101 @@ class Cylinder:
         print("Your circle's diameter is {}, based on the radius: {}".format((radius * 2), radius))
         self.height = height
         self.radius = radius
-        
+
     pi = 3.14
         
-    def surface_area(self, radius, height):
-        return 2 * self.pi * radius * (height + radius)
+    def surface_area(self):
+        return 2 * self.pi * self.radius * (self.height + self.radius)
     
-    def volume(self, radius, height):
-        return self.pi * height * (radius ** 2)
+    def volume(self):
+        return self.pi * self.height * (self.radius ** 2)
 
 cyclinder_1 = Cylinder(height = 13, radius = 33)
-print(cyclinder_1.surface_area(radius = 33, height = 13))
-print(cyclinder_1.volume(radius = 33, height = 13))
+print(cyclinder_1.surface_area())
+print(cyclinder_1.volume())
+
+#Instance Variables
+class Store:
+    pass
+
+alternative_rocks = Store()
+isabelles_ices = Store()
+
+alternative_rocks.store_name = "Alternative Rocks"
+isabelles_ices.store_name = "Isabelle's Ices"
+
+#Attribute Functions
+can_we_count_it = [{'s': False}, "sassafrass", 18, ["a", "c", "s", "d", "s"]]
+for element in can_we_count_it:
+    if hasattr(element, "count"):
+        print(str(type(element)) + " has the count attribute!")
+    else:
+        print(str(type(element)) + " does not have the count attribute :(")
+
+#Self
+class Circle:
+    pi = 3.14
+    def __init__(self, diameter):
+        print("Creating circle with diameter {d}".format(d=diameter))
+        self.radius = diameter / 2
+
+    def __repr__(self):
+        return "Circle with radius {}".format(self.radius)
+
+    def circumference(self):
+        return 2 * self.pi * self.radius
+
+medium_pizza = Circle(12)
+teaching_table = Circle(36)
+round_room = Circle(11460)
+
+print("Circumference for Medium Pizza: ", medium_pizza.circumference())
+print("Circumference for Teaching Table: ", teaching_table.circumference())
+print("Circumference for Round Room: ", round_room.circumference())
+
+#dir()
+print("dir(5): ", dir(5))
+def this_function_is_an_object(tech_field):
+    return "{} is a new exciting and growing industry in tech".format(tech_field)
+
+print(this_function_is_an_object("Extended Reality"))
+print(this_function_is_an_object("Artifical Intelligence"))
+print(this_function_is_an_object("Internet of Things (IoT)"))
+
+#Calling dir() on function itself
+print(dir(this_function_is_an_object))
+
+#String Representation
+print("Medium Pizza: ", medium_pizza)
+print("Teaching Table: ", teaching_table)
+print("Round Room: ", round_room)
+
+#Review of OOP with Python
+class Student:
+    def __init__(self, name, year):
+        self.name = name
+        self.year = year
+        self.grades = []
+
+    def __repr__(self):
+        return self.name
+
+    def add_grade(self, grade):
+        if type(grade) == Grade:
+            self.grades.append(grade)
+
+roger = Student("Roger van der Weyden", 10)
+sandro = Student("Sandro Botticelli", 12)
+pieter = Student("Pieter Bruegel the Elder", 8)
+
+class Grade:
+    minimum_passing = 65
+    def __init__(self, score):
+        self.score = score
+        self.grades = []
+    
+    def __repr__(self):
+        return self.grades
+
+new_grade = Grade(100)
+pieter.add_grade(new_grade)
