@@ -993,6 +993,7 @@ print("Round Room: ", round_room)
 
 #Review of OOP with Python
 class Student:
+    attendence = {}
     def __init__(self, name, year):
         self.name = name
         self.year = year
@@ -1002,21 +1003,52 @@ class Student:
         return self.name
 
     def add_grade(self, grade):
-        if type(grade) == Grade:
+        if type(grade) is Grade:
             self.grades.append(grade)
-
-roger = Student("Roger van der Weyden", 10)
-sandro = Student("Sandro Botticelli", 12)
-pieter = Student("Pieter Bruegel the Elder", 8)
+    
+    def get_average(self):
+        sum = 0
+        for grade in self.grades:
+            sum += grade.score
+        return sum / len(self.grades)
 
 class Grade:
     minimum_passing = 65
     def __init__(self, score):
         self.score = score
-        self.grades = []
     
     def __repr__(self):
-        return self.grades
+        return self.score
+    
+    def is_passing(self):
+        return self.score > self.minimum_passing
+
+roger = Student("Roger van der Weyden", 10)
+roger.attendence = {
+    "01-05-2021": True,
+    "01-06-2021": False,
+    "01-07-2021": True,
+    "01-08-2021": True
+}
+sandro = Student("Sandro Botticelli", 12)
+sandro.attendence = {
+    "01-05-2021": True,
+    "01-06-2021": False,
+    "01-07-2021": True,
+    "01-08-2021": False
+}
+pieter = Student("Pieter Bruegel the Elder", 8)
+pieter.attendence = {
+    "01-05-2021": False,
+    "01-06-2021": False,
+    "01-07-2021": True,
+    "01-08-2021": True
+}
 
 new_grade = Grade(100)
 pieter.add_grade(new_grade)
+pieter.add_grade(Grade(95))
+pieter.add_grade(Grade(80))
+pieter.add_grade(Grade(75))
+print("isPassing(): ", new_grade.is_passing())
+print("get_average(): ", pieter.get_average())
