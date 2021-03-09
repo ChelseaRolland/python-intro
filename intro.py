@@ -1162,3 +1162,46 @@ salt = Molecule([sodium, chlorine])
 salt = sodium + chlorine
 
 #Dunder Methods 2
+class LawFirm:
+    def __init__(self, practice, lawyers):
+        self.practice = practice
+        self.lawyers = lawyers
+
+    def __len__(self):
+        if type(self.lawyers) is list:
+            return len(self.lawyers)
+
+    def __contains__(self, lawyer):
+        return lawyer in self.lawyers
+
+d_and_p = LawFirm("Injury", ["Donelli", "Paderewski"])
+print("Dunder Method 2.1: - Length: ", len(d_and_p.lawyers))
+print("Dunder Method 2.2: - Contains: ", "Donelli" in d_and_p.lawyers)
+
+#Review
+class SortedList(list):   
+    def __init__(self, lst):
+        super().__init__(lst)
+        self.sort()
+    
+    def append(self, value):
+        super().append(value)
+        self.sort()
+
+new_list = SortedList([4,1,5])
+print("Sorted List 1.1: ", new_list)
+new_list.append(0)
+new_list.append(22)
+print("Sorted List 1.2: ", new_list)
+
+class FallbackDict(dict):
+    fallback = "Incorrect Key"
+    def __init__(self, dict):
+        super.__init__(self, dict)
+    
+    def __getitem__(self, key):
+        try:
+            return super().__getitem__(key)
+        except KeyError:
+            return self.fallback
+
