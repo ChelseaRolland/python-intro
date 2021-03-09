@@ -1116,3 +1116,49 @@ class SpecialPotatoSalad(PotatoSalad):
         self.paprika = 40
 
 #Interfaces
+class InsurancePolicy:
+    def __init__(self, price_of_item):
+        self.price_of_insured_item = price_of_item
+
+class VehicleInsurance(InsurancePolicy):
+    def __init__(self, price_of_item):
+        super().__init__(price_of_item)
+    
+    def get_rate(self):
+        return .001 * self.price_of_insured_item
+
+class HomeInsurance(InsurancePolicy):
+    def __init__(self, price_of_item):
+        super().__init__(price_of_item)
+    
+    def get_rate(self):
+        return .00005 * self.price_of_insured_item
+
+#Polymorphism
+a_list = [1, 18, 32, 12]
+a_dict = {'value': True}
+a_string = "Polymorphism is cool!"
+
+#Polymorphism: same name for method, however doing different actions depending on type of data
+print(len(a_list))
+print(len(a_dict))
+print(len(a_string))
+
+#Dunder Methods
+class Atom:
+    def __init__(self, label):
+        self.label = label
+    def __add__(self, other):
+        return Molecule([self, other])
+
+class Molecule:
+    def __init__(self, atoms):
+        if type(atoms) is list:
+            self.atoms = atoms
+
+sodium = Atom("Na")
+chlorine = Atom("Cl")
+salt = Molecule([sodium, chlorine])
+salt = sodium + chlorine
+
+#Dunder Methods 2
