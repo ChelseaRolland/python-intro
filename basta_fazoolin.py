@@ -1,5 +1,6 @@
 import datetime
 
+#Creating the Menus
 class Menu:
     def __init__(self, name, items, start_time, end_time):
         self.name = name
@@ -10,7 +11,12 @@ class Menu:
     def __repr__(self):
         return "{} menu available from {} to {}".format(self.name, self.start_time, self.end_time)
 
-    def calculate_bill(self, order):
+    def calculate_bill(self, purchased_items):
+        sum = 0
+        for key, val in self.items.items():
+            if key in purchased_items:
+                sum += val
+        return sum
 
 
 brunch = Menu("brunch", {
@@ -33,4 +39,22 @@ print(brunch)
 print(early_bird)
 print(dinner)
 print(kids)
+
+print(brunch.calculate_bill(["pancakes", "home fries", "coffee"]))
+print(early_bird.calculate_bill(["salumeria plate", "mushroom ravioli (vegan)"]))
+
+#Creating the Franchises
+class Franchise:
+    def __init__(self, address, menus):
+        self.address = address
+        self.menus = menus
+    
+    def __repr__(self):
+        return "This is the Basta Fazoolin with my Heart at {}".format(self.address)
+
+flagship_store = Franchise("1232 West End Road", [brunch, early_bird, dinner, kids])
+new_installment = Franchise("12 East Mulberry Street", [brunch, early_bird, dinner, kids])
+print(flagship_store)
+print(new_installment)
+
 
