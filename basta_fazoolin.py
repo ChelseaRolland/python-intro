@@ -52,9 +52,35 @@ class Franchise:
     def __repr__(self):
         return "This is the Basta Fazoolin with my Heart at {}".format(self.address)
 
+    def available_menus(self, time):
+        #List Compreshension to find the menus that are available in the alloted time from the users
+        avail_menus = [menu for menu in self.menus if datetime.time(time) >= menu.start_time and datetime.time(time) <= menu.end_time]
+
+        return avail_menus
+
 flagship_store = Franchise("1232 West End Road", [brunch, early_bird, dinner, kids])
 new_installment = Franchise("12 East Mulberry Street", [brunch, early_bird, dinner, kids])
 print(flagship_store)
 print(new_installment)
+print(flagship_store.available_menus(12))
+print(flagship_store.available_menus(17))
+print(flagship_store.available_menus(19))
 
+#Creating Businesses
+class Business:
+    def __init__(self, name, franchises):
+        self.name = name
+        self.franchises = franchises
+    
+    def __repr__(self):
+        return "We are {} and we have {} franchises".format(self.name, len(self.franchises))
 
+first_business = Business("Basta Fazoolin' with my Heart", [flagship_store, new_installment])
+
+arepas_menu = Menu("Take a’ Arepa", {
+    'arepa pabellon': 7.00, 'pernil arepa': 8.50, 'guayanes arepa': 8.00, 'jamon arepa': 7.50
+}, datetime.time(10), datetime.time(20))
+
+arepas_place = Franchise("189 Fitzgerald Avenue", [arepas_menu])
+
+second_business = Business("Take a' Arepa", [arepas_place])
