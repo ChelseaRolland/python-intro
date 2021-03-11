@@ -1,3 +1,4 @@
+import os
 from review_lib import get_next_review, submit_review
 from record_library import place_record, rotate_record, drop_needle
 import csv
@@ -1234,5 +1235,31 @@ list_sort_return = sort_this_list.sort()
 print(list_sort_return)
 
 #Default Arguments
+# def make_folders(folders_list, nest =  False):
+#     if nest:
+#         """
+#         Nest all the folders, like
+#         ./Music/fun/parliament
+#         """
+#         path_to_new_folder = "."
+#         for folder in folders_list:
+#             path_to_new_folder += "/{}".format(folder)
+#             try:
+#                 print(path_to_new_folder)
+#                 os.makedirs("./" + path_to_new_folder)
+#             except FileExistsError:
+#                 continue
+#     else:
+#         """
+#         Makes all different folders, like
+#         ./Music/ ./fun/ and ./parliament/
+#         """
+#         for folder in folders_list:
+#             try:
+#                 os.makedirs(folder)
+#             except FileExistsError:
+#                 continue
+
+# make_folders(['Music', 'fun', 'parliament'])
 
 
