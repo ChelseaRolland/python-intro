@@ -1,3 +1,5 @@
+from review_lib import get_next_review, submit_review
+from record_library import place_record, rotate_record, drop_needle
 import csv
 import json
 
@@ -1204,4 +1206,33 @@ class FallbackDict(dict):
             return super().__getitem__(key)
         except KeyError:
             return self.fallback
+
+
+#Function Arguments
+def play_record(album):
+    place_record(album)
+    rotate_record(album)
+    drop_needle(album)
+
+next_album = "Blondie / Parallel Lines"
+play_record(next_album)
+
+#None
+review = get_next_review()
+if review is not None:
+    submit_review(review)
+    print("Review has been submitted")
+else:
+    print("Review is None")
+
+#Default Return --> will return None
+prints_return = print("What does this print function return?")
+print(prints_return)
+
+sort_this_list = [14, 631, 4, 51358, 50000000]
+list_sort_return = sort_this_list.sort()
+print(list_sort_return)
+
+#Default Arguments
+
 
