@@ -1,3 +1,4 @@
+import shapes
 import os
 from review_lib import get_next_review, submit_review
 from record_library import place_record, rotate_record, drop_needle
@@ -1262,4 +1263,21 @@ print(list_sort_return)
 
 # make_folders(['Music', 'fun', 'parliament'])
 
+#Using Keyword and Positional Arguments
+# def get_id(html_id, website="http://coolsite.com"):
+#     request = requests.get(website)
+#     parsed_html = BeautifulSoup(website.content, features="html.parser")
+#     return parsed_html.find(id_=html_id)
+
+#Keyword Arguments
+def draw_shape(shape_name="box", character="x", line_breaks=True):
+    shape = shapes.draw_shape(shape_name, character)
+    if not line_breaks:
+        print(shape[1:-1])
+    else:
+        print(shape)
+
+draw_shape(character="m", line_breaks=False)
+
+#Don't Use Mutable Default Arguments
 
