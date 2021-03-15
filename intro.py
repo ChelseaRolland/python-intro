@@ -1,3 +1,4 @@
+from os.path import join
 import shapes
 import os
 from review_lib import get_next_review, submit_review
@@ -1279,5 +1280,105 @@ def draw_shape(shape_name="box", character="x", line_breaks=True):
 
 draw_shape(character="m", line_breaks=False)
 
-#Don't Use Mutable Default Arguments
+#Don't Use Mutable Default Arguments and use None instead
+#Only put tuples, int, floats, and strings as default since they can't be changed aka immutable
+def update_order(new_item, current_order=None):
+    if current_order is None:
+        current_order = []
+    current_order.append(new_item)
+    return current_order
 
+# First order, burger and a soda
+order1 = update_order({'item': 'burger', 'cost': '3.50'})
+order1 = update_order({'item': 'soda', 'cost': '1.50'}, order1)
+
+# Second order, just a soda
+order2 = update_order({'item': 'soda', 'cost': '1.50'})
+
+# What's in that second order again?
+print(order2)
+
+#Unpacking Multiple Returns
+def scream_and_whisper(text):
+    scream = text.upper()
+    whisper = text.lower()
+    return scream, whisper
+
+the_scream, the_whisper = scream_and_whisper("Nice Beat")
+print("The Scream: ", the_scream)
+print("The Whisper: ", the_whisper)
+
+#Positional Argument Unpacking
+
+path_segment_1 = "/Home/User"
+path_segment_2 = "Codecademy/videos"
+path_segment_3 = "cat_videos/surprised_cat.mp4"
+
+# join all three of the paths here!
+print(join(path_segment_1, path_segment_2, path_segment_3))
+
+def myjoin(*args):
+    empty_string = ""
+    for argue in args:
+        empty_string += argue
+    return empty_string
+
+print(myjoin("Bacon", "Loever"))
+
+#Keyword Unpacking
+# Checkpoint 1
+print("My name is {name} and I'm feeling {feeling}.".format(
+	# add your arguments to .format()
+    name = "Coven",
+    feeling = "indifferent"
+))
+
+# Checkpoint 2
+# Update create_products() to take arbitrary keyword arguments
+# def create_products(**products_dict):
+#     for name, price in products_dict.items():
+#         create_product(name, price)
+
+# Checkpoint 3
+# Update the call to `create_products()` to pass in this dictionary as a series of keyword
+# create_products(
+#     Baseball = 3,
+#     Shirt = 14,
+#     Guitar = 70
+# )
+
+#Using Both Keyword and Positional Unpacking
+# def remove(filename, *args, **kwargs):
+#     with open(filename) as file_obj:
+#         text = file_obj.read()
+
+# # Add code here to update text.
+#     for arg in args:
+#         text = text.replace(arg, "")
+
+#     for kwarg, replacement in kwargs.items():
+#         text = text.replace(kwarg, replacement)
+
+#     return text
+
+# print(remove("text.txt", "generous", "gallant", fond="amused by", Robin="Mr. Robin"))
+
+#Passing Containers as Arguments
+
+
+def create_product(name, price):
+    print("{} created, being sold for ${}".format(name, price))
+
+def create_products(**products_dict):
+    for name, price in products_dict.items():
+        create_product(name, price)
+
+new_product_dict = {
+    'Apple': 1,
+    'Ice Cream': 3,
+    'Chocolate': 5,
+}
+
+# Call create_products() by passing new_product_dict
+# as kwargs!
+create_products(**new_product_dict)
