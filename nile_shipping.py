@@ -16,7 +16,7 @@ test_function(calculate_shipping_cost)
 
 #Driver Careers
 def calculate_driver_cost(distance, *drivers):
-    cheapest_driver, cheapest_driver_price = None
+    cheapest_driver, cheapest_driver_price = None, None
     for driver in drivers:
         driver_time = driver.speed * distance
         price_for_driver = driver.salary * driver_time
@@ -26,7 +26,6 @@ def calculate_driver_cost(distance, *drivers):
         elif price_for_driver < cheapest_driver_price:
             cheapest_driver = driver
             cheapest_driver_price = price_for_driver
-    
     return cheapest_driver_price, cheapest_driver
 
 #Test
