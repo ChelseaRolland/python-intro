@@ -1390,13 +1390,16 @@ def title_decorator(print_name_function):
         print_name_function()
     return wrapper
 
+@title_decorator
 def print_my_name():
     print("Chelsea")
 
+@title_decorator
 def print_mikes_name():
     print("Mike")
 
-decorated_function = title_decorator(print_mikes_name)
-decorated_function()
+#Simple Format --> use the @ symbol above the function being called
+print_my_name()
+print_mikes_name()
 
-#Simple Format
+#Decorators with parameters
