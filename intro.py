@@ -1382,3 +1382,21 @@ new_product_dict = {
 # Call create_products() by passing new_product_dict
 # as kwargs!
 create_products(**new_product_dict)
+
+#Decorators --> returns a new function with new functionality
+def title_decorator(print_name_function):
+    def wrapper():
+        print("Animator:")
+        print_name_function()
+    return wrapper
+
+def print_my_name():
+    print("Chelsea")
+
+def print_mikes_name():
+    print("Mike")
+
+decorated_function = title_decorator(print_mikes_name)
+decorated_function()
+
+#Simple Format
