@@ -1385,21 +1385,14 @@ create_products(**new_product_dict)
 
 #Decorators --> returns a new function with new functionality
 def title_decorator(print_name_function):
-    def wrapper():
+    def wrapper(*args, **kwargs):
         print("Animator:")
-        print_name_function()
+        print_name_function(*args, **kwargs)
     return wrapper
 
-@title_decorator
-def print_my_name():
-    print("Chelsea")
-
-@title_decorator
-def print_mikes_name():
-    print("Mike")
-
-#Simple Format --> use the @ symbol above the function being called
-print_my_name()
-print_mikes_name()
+@title_decorator #using annotations for the decorators for python
+def print_my_name(name, age):
+    print(name + " you are " + str(age) + " years old.")
 
 #Decorators with parameters
+print_my_name("Aqua", 25)
