@@ -10,7 +10,7 @@ class Node:
     def get_link_node(self):
         return self.link_node
     
-    #setters
+    #setters --> setting the link to the next node
     def set_link_node(self, link_node):
         self.link_node = link_node
 
